@@ -12,6 +12,7 @@ void PID::Init(double Kp_, double Ki_, double Kd_) {
   Kd = Kd_;
   first_measurement = true;
   total_err = 0;
+  i_error = 0;
 }
 
 void PID::UpdateError(double cte) {
