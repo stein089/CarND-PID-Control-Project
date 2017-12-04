@@ -11,7 +11,7 @@ The goal of the project is to implement a PID controller to race around the lake
 ## Implementation 
 
 One PID controller was used to control the throttle of the vehicle in order to achieve a constant speed of 20 km/s. 
-The parameters of the throttle PID controller were set to: Kp=0.05, Ki = 0.005 and Kd = 0.
+The parameters of the throttle PID controller were set to: Kp=0.05, Ki = 0.001 and Kd = 0.
 
 Another PID controller was used to control the steering. 
 Manual parameter tuning was used to get a feeling for the impact of the single parameters. 
@@ -20,17 +20,21 @@ Afterwards, a twiddle algorithm was used to automatically fine tune the paramete
 The algorithm was implemented similar to the version showin in the class. 
 For every set of parameters, the simulator was first reset and then the code was run for the first 500 timestamps of the simulator.
 Using this procedure, the total error of more than 200 parameter configurations was recorded.
-The parameter-set which resulted in the minimum error resulted in:
+The parameter-set which resulted in the minimum error resulted in the following parameters for the throttle PID controller:
+Kp=0.813491, Ki = 0.00215393 and Kd = 3.24184.
 
 This combination resulted in a total error of: .
 Thus, this combination was used for the submission of the project. 
 
-The implementation of the twiddle algorithm can be found in main_twiddle.cpp. 
+The implementation of the twiddle algorithm can be found in `src/main_twiddle.cpp`
 
 ## Demo
 
-The chosen parameter configuration resulted in the following test video: 
+The chosen parameter configuration resulted in the following output: 
 
+<img src="./media/video.gif" />  
+
+The vehicle stays on the track during the whole circuit. 
 
 
 ## Running the Code
